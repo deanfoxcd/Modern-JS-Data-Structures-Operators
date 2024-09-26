@@ -39,9 +39,56 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Building your pasta with ${ing1}, ${ing2}, and ${ing3}`);
   },
+
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
+  },
 };
 
-// Spread Operator
+// **REST**
+
+// In destructuring
+
+// Spread is used on right side of =
+const arr = [1, 2, ...[3, 4]];
+console.log(arr); // [1,2,3,4]
+
+// Rest is used on the left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others); // [1,2,[3,4,5]]
+
+// Obviously Rest must be last element and there can only be one
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(weekDays);
+
+// In functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(4, 5, 6);
+add(7, 8, 9, 10);
+
+const x = [23, 15, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'olives', 'pineapple');
+
+// **SPREAD OPERATOR**
+/*
 const arr = [7, 8, 9];
 const newArr = [1, 2, ...arr];
 console.log(newArr); // [1,2,7,8,9]
@@ -76,8 +123,9 @@ console.log(...str);
 const newRestaurant = { founded: 1918, ...restaurant, founder: 'Leo' };
 console.log(newRestaurant);
 const restaurantCopy = { ...restaurant };
+*/
 
-// Destructuring Objects
+// **DESTRUCTURING OBJECTS**
 
 /*
 restaurant.orderDelivery({
@@ -121,7 +169,8 @@ const {
 console.log(open, close);
 */
 
-// Destructuring Arrays
+// **DESTRUCTURING ARRAYS**
+
 /*
 let [main, secondary] = restaurant.categories;
 console.log(main, secondary);

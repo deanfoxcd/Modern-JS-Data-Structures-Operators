@@ -289,5 +289,3 @@ function spellWord(word) {
   console.log(...word);
 }
 spellWord('JavaScript');
-
-// 3.3
