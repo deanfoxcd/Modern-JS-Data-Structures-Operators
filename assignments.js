@@ -279,3 +279,15 @@ printBookInfo({
   author: 'Robert Sedgewick',
   year: '2011',
 });
+
+// 3.1
+const bookAuthors = [...books[0].author, ...books[1].author];
+console.log(bookAuthors);
+
+// 3.2
+function spellWord(word) {
+  console.log(...word);
+}
+spellWord('JavaScript');
+
+// 3.3
