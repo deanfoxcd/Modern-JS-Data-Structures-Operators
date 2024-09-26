@@ -35,8 +35,51 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Building your pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  },
 };
 
+// Spread Operator
+const arr = [7, 8, 9];
+const newArr = [1, 2, ...arr];
+console.log(newArr); // [1,2,7,8,9]
+console.log(...newArr); // 1,2,7,8,9
+
+const newMainMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMainMenu);
+
+// Copy array
+const mainCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets, NOT objects
+const str = 'dean';
+const letters = [...str];
+console.log(letters);
+console.log(...str);
+
+// Example
+// const ingredients = [
+//   prompt('Ingredient 1: '),
+//   prompt('Ingredient 2: '),
+//   prompt('Ingredient 3: '),
+// ];
+// console.log(...ingredients);
+// restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { founded: 1918, ...restaurant, founder: 'Leo' };
+console.log(newRestaurant);
+const restaurantCopy = { ...restaurant };
+
+// Destructuring Objects
+
+/*
 restaurant.orderDelivery({
   starterIndex: 1,
   mainIndex: 0,
@@ -44,8 +87,6 @@ restaurant.orderDelivery({
   address: '7 Savell Ave',
 });
 
-// Destructuring Objects
-/*
 // Same variable names
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
