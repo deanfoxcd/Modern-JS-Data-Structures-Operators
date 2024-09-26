@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,9 +26,62 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+    );
+  },
 };
 
-// Destructuring
+restaurant.orderDelivery({
+  starterIndex: 1,
+  mainIndex: 0,
+  time: '21:30',
+  address: '7 Savell Ave',
+});
+
+// Destructuring Objects
+/*
+// Same variable names
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// Different Variable names
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating Variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+// {a, b} = obj // This will not work because of the curly braces
+({ a, b } = obj); // The brackets cause it to work
+console.log(a, b); // a and b are overwritten with the values in obj
+
+// Nested Objects
+// const { fri } = openingHours;
+// console.log(fri); // Prints an object with the opening and closing hours
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+*/
+
+// Destructuring Arrays
+/*
 let [main, secondary] = restaurant.categories;
 console.log(main, secondary);
 
@@ -52,3 +101,4 @@ console.log(i, j, k);
 // Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
