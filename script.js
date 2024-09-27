@@ -46,8 +46,44 @@ const restaurant = {
   },
 };
 
-// **REST**
+// SHORT CIRCUITING
+// If the first value is truthy then it will immediately return that first value
 
+// Or
+console.log(3 || 'Dean'); // 3
+console.log('' || 'Dean'); // Dean
+console.log(true || 0); // true
+console.log(undefined || null); //null. Even though it's falsey it's the only value left
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Hello
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); // 10
+
+// A quicker syntax
+const guests2 = restaurant.numGuests || 23;
+console.log(guests2); // 23
+
+// And &&
+// Will keep going until it sees a falsey value and then outputs the last value
+
+console.log(0 && 'Dean'); // 0
+console.log(9 && 'Dean'); // Dean
+
+console.log('Hello' && 9 && null && 'Belle'); // null (because that's where it short circuits)
+
+// Practical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// With &&
+restaurant.orderPizza && restaurant.orderPizza('pepperoni', 'bacon');
+// The first value is truthy so it will continue. The last value is the
+// function call so it will be called
+
+// **REST**
+/*
 // In destructuring
 
 // Spread is used on right side of =
@@ -86,6 +122,7 @@ const x = [23, 15, 7];
 add(...x);
 
 restaurant.orderPizza('mushrooms', 'olives', 'pineapple');
+*/
 
 // **SPREAD OPERATOR**
 /*
