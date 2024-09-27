@@ -324,3 +324,23 @@ const books = [
 //   books[i].onlineContent ??
 //     console.log(`${books[i].title} provides no data about its online content`);
 // }
+
+// // 7.1
+// for (let i = 0; i < books.length; i++) {
+//   books[i].edition ||= 1;
+//   console.log(books[i].edition);
+// }
+
+// // 7.2
+// // My solution
+// // for (let i = 0; i < books.length; i++) {
+// //   if (books[i].thirdParty.goodreads.rating < 4.2) {
+// //     books[i].highlighted &&= false;
+// //     console.log(books[i].highlighted);
+// //   }
+// // }
+// // Correct Solution
+// for (let i = 0; i < books.length; i++) {
+//   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+//   console.log(books[i].highlighted);
+// }
