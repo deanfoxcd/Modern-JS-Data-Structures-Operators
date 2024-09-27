@@ -1,5 +1,47 @@
 'use strict';
 
+// Coding Challenge #1 Data
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -46,6 +88,38 @@ const restaurant = {
   },
 };
 
+// **CODING CHALLENGE 1**
+const [players1, players2] = game.players;
+
+// console.log(players1, players2);
+
+const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+
+const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+
+const playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+// console.log(playersFinal);
+
+// const { team1, x: draw, team2 } = game.odds; // My solution
+const {
+  odds: { team1, x: draw, team2 },
+} = game; // Course solution
+// console.log(team1, team2, draw);
+
+const printGoals = function (...player) {
+  console.log(`${player.length} goals were scored by ${player}.`);
+};
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals(...game.scored);
+
+team1 < team2 && console.log(`${game.team1} is more likely to win`);
+team2 < team1 && console.log(`${game.team2} is more likely to win`);
+
+// **||, &&, AND ?? ASSIGNMENT OPERATORS**
+/*
+
 const rest1 = {
   name: 'Capri',
   // numGuests: 20,
@@ -57,7 +131,6 @@ const rest2 = {
   owner: 'Fernando Giovanni',
 };
 
-// ||, &&, and ?? assignment operators
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
 // rest1.numGuests ||= 10;
@@ -70,8 +143,9 @@ rest2.owner &&= rest2.owner = '<anonymous>';
 
 console.log(rest1);
 console.log(rest2);
+*/
 
-// Nullish Coalescing Operator
+// **NULLISH COALESCING OPERATOR**
 /*
 // Only works for null and undefined, not for 0 or ''
 
@@ -84,7 +158,7 @@ const guestCorrect = restaurant.numGuests ?? 23;
 console.log(guestCorrect); // 0
 */
 
-// SHORT CIRCUITING
+// **SHORT CIRCUITING**
 /*
 // If the first value is truthy then it will immediately return that first value
 
@@ -203,7 +277,6 @@ const restaurantCopy = { ...restaurant };
 */
 
 // **DESTRUCTURING OBJECTS**
-
 /*
 restaurant.orderDelivery({
   starterIndex: 1,
@@ -247,7 +320,6 @@ console.log(open, close);
 */
 
 // **DESTRUCTURING ARRAYS**
-
 /*
 let [main, secondary] = restaurant.categories;
 console.log(main, secondary);
