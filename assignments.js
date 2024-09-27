@@ -305,16 +305,22 @@ const books = [
 
 // printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
 
-// 5.1
-const hasExamplesInJava = function (obj) {
-  return obj.programmingLanguage === 'Java' || 'no data';
-};
+// // 5.1
+// const hasExamplesInJava = function (obj) {
+//   return obj.programmingLanguage === 'Java' || 'no data';
+// };
 
-console.log(hasExamplesInJava(books[3]));
-// But this won't work if there is more than one lang even if one is Java
+// console.log(hasExamplesInJava(books[3]));
+// // But this won't work if there is more than one lang even if one is Java
 
-// 5.2
-for (let i = 0; i < books.length; i++) {
-  books[i].onlineContent &&
-    console.log(`${books[i].title} provides online content`);
-}
+// // 5.2
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent &&
+//     console.log(`${books[i].title} provides online content`);
+// }
+
+// // 6.1
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent ??
+//     console.log(`${books[i].title} provides no data about its online content`);
+// }
