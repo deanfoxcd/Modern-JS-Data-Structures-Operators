@@ -345,38 +345,63 @@ const books = [
 //   console.log(books[i].highlighted);
 // }
 
-// 8.1
-let pageSum = 0;
-for (const book of books) {
-  pageSum += book.pages;
-}
-console.log(pageSum);
-
-// 8.2
-const allAuthors = [];
-
-// My Solution (which seems to work)
-for (const book of books) {
-  if (typeof book.author === 'object') {
-    allAuthors.push(...book.author);
-  } else {
-    allAuthors.push(book.author);
-  }
-}
-
-// // Course Solution
+// // 8.1
+// let pageSum = 0;
 // for (const book of books) {
-//   if (typeof book.author === 'string') {
-//     allAuthors.push(book.author);
+//   pageSum += book.pages;
+// }
+// console.log(pageSum);
+
+// // 8.2
+// const allAuthors = [];
+
+// // My Solution (which seems to work)
+// for (const book of books) {
+//   if (typeof book.author === 'object') {
+//     allAuthors.push(...book.author);
 //   } else {
-//     for (const author of book.author) {
-//       allAuthors.push(author);
-//     }
+//     allAuthors.push(book.author);
 //   }
 // }
-console.log(allAuthors);
 
-// 8.3
-for (const [i, auth] of allAuthors.entries()) {
-  console.log(`${i + 1}: ${auth}`);
-}
+// // // Course Solution
+// // for (const book of books) {
+// //   if (typeof book.author === 'string') {
+// //     allAuthors.push(book.author);
+// //   } else {
+// //     for (const author of book.author) {
+// //       allAuthors.push(author);
+// //     }
+// //   }
+// // }
+// console.log(allAuthors);
+
+// // 8.3
+// for (const [i, auth] of allAuthors.entries()) {
+//   console.log(`${i + 1}: ${auth}`);
+// }
+
+// 9.1
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+// Do the rest
+const newBook = {
+  [bookData[0][0]]: bookData[0][1],
+  [bookData[1][0]]: bookData[1][1][1],
+  [bookData[2][0]]: bookData[2][1],
+};
+console.log(newBook);
+
+// 9.2
+const pages = 880;
+
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages,
+};
+console.log(newBook2);
