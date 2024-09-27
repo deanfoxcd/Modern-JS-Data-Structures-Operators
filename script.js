@@ -46,7 +46,33 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'Siesta',
+  owner: 'Fernando Giovanni',
+};
+
+// ||, &&, and ?? assignment operators
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner &&= rest1.owner = '<anonymous>';
+rest2.owner &&= rest2.owner = '<anonymous>';
+
+console.log(rest1);
+console.log(rest2);
+
 // Nullish Coalescing Operator
+/*
 // Only works for null and undefined, not for 0 or ''
 
 restaurant.numGuests = 0;
@@ -56,6 +82,7 @@ console.log(guests); // 23 because 0 is falsey
 // Using nullish coalescing
 const guestCorrect = restaurant.numGuests ?? 23;
 console.log(guestCorrect); // 0
+*/
 
 // SHORT CIRCUITING
 /*
