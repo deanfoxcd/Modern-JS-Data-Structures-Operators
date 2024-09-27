@@ -244,48 +244,63 @@ const books = [
 // const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;
 // console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
 
-// 2.1
-const { title, author, ISBN } = books[0];
-console.log(title, author, ISBN);
+// // 2.1
+// const { title, author, ISBN } = books[0];
+// console.log(title, author, ISBN);
 
-// 2.2
-const { keywords: tags } = books[0];
-console.log(tags);
+// // 2.2
+// const { keywords: tags } = books[0];
+// console.log(tags);
 
-// 2.3
-const { language, programmingLanguage = 'unknown' } = books[6];
-console.log(language, programmingLanguage);
+// // 2.3
+// const { language, programmingLanguage = 'unknown' } = books[6];
+// console.log(language, programmingLanguage);
 
-// 2.4
-let bookTitle = 'unknown';
-let bookAuthor = 'unknown';
-({ title: bookTitle, author: bookAuthor } = books[0]);
-console.log(bookTitle, bookAuthor);
+// // 2.4
+// let bookTitle = 'unknown';
+// let bookAuthor = 'unknown';
+// ({ title: bookTitle, author: bookAuthor } = books[0]);
+// console.log(bookTitle, bookAuthor);
 
-// 2.5
-const {
-  thirdParty: {
-    goodreads: { rating: bookRating },
-  },
-} = books[0];
-console.log(bookRating);
+// // 2.5
+// const {
+//   thirdParty: {
+//     goodreads: { rating: bookRating },
+//   },
+// } = books[0];
+// console.log(bookRating);
 
-// 2.6
-const printBookInfo = function ({ title, author, year = 'unknown' }) {
-  console.log(`${title} by ${author}, ${year}`);
+// // 2.6
+// const printBookInfo = function ({ title, author, year = 'unknown' }) {
+//   console.log(`${title} by ${author}, ${year}`);
+// };
+// printBookInfo({
+//   title: 'Algorithms',
+//   author: 'Robert Sedgewick',
+//   year: '2011',
+// });
+
+// // 3.1
+// const bookAuthors = [...books[0].author, ...books[1].author];
+// console.log(bookAuthors);
+
+// // 3.2
+// function spellWord(word) {
+//   console.log(...word);
+// }
+// spellWord('JavaScript');
+
+// 4.1
+const [mainKeyword, ...rest] = books[0].keywords;
+console.log(mainKeyword, rest);
+
+// 4.2
+const { publisher: bookPublisher, ...restOfBook } = books[1];
+console.log(bookPublisher, restOfBook); //🎉🎉🎉🎉🎉
+
+// 4.3
+const printBookAuthorsCount = function (title, ...authors) {
+  console.log(`The book ${title} has ${authors.length} authors`);
 };
-printBookInfo({
-  title: 'Algorithms',
-  author: 'Robert Sedgewick',
-  year: '2011',
-});
 
-// 3.1
-const bookAuthors = [...books[0].author, ...books[1].author];
-console.log(bookAuthors);
-
-// 3.2
-function spellWord(word) {
-  console.log(...word);
-}
-spellWord('JavaScript');
+printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
