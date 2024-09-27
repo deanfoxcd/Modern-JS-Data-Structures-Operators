@@ -88,7 +88,30 @@ const restaurant = {
   },
 };
 
+// **FOR/OF LOOP**
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// Logs each item in the array
+// for (const item of menu) console.log(item);
+
+// Logs each item but with the index
+// for (const item of menu.entries()) {
+//   console.log(item);
+// }
+
+// Logs each item and numbers the list from 1
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+
+// A better way of doing above
+for (const [i, el] of menu.entries()) {
+  // destructures the menu.entries output. i is index, el is menu item
+  console.log(`${i + 1}: ${el}`);
+}
+
 // **CODING CHALLENGE 1**
+/*
 const [players1, players2] = game.players;
 
 // console.log(players1, players2);
@@ -116,6 +139,7 @@ const printGoals = function (...player) {
 
 team1 < team2 && console.log(`${game.team1} is more likely to win`);
 team2 < team1 && console.log(`${game.team2} is more likely to win`);
+*/
 
 // **||, &&, AND ?? ASSIGNMENT OPERATORS**
 /*

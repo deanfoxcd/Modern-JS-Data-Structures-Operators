@@ -344,3 +344,39 @@ const books = [
 //   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
 //   console.log(books[i].highlighted);
 // }
+
+// 8.1
+let pageSum = 0;
+for (const book of books) {
+  pageSum += book.pages;
+}
+console.log(pageSum);
+
+// 8.2
+const allAuthors = [];
+
+// My Solution (which seems to work)
+for (const book of books) {
+  if (typeof book.author === 'object') {
+    allAuthors.push(...book.author);
+  } else {
+    allAuthors.push(book.author);
+  }
+}
+
+// // Course Solution
+// for (const book of books) {
+//   if (typeof book.author === 'string') {
+//     allAuthors.push(book.author);
+//   } else {
+//     for (const author of book.author) {
+//       allAuthors.push(author);
+//     }
+//   }
+// }
+console.log(allAuthors);
+
+// 8.3
+for (const [i, auth] of allAuthors.entries()) {
+  console.log(`${i + 1}: ${auth}`);
+}
