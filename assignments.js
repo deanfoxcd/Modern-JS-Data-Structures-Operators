@@ -116,7 +116,7 @@ const books = [
     format: 'hardcover',
     ISBN: '9780471694663',
     language: 'English',
-    programmingLanguage: 'C, Java',
+    programmingLanguage: 'Java, C',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -290,17 +290,31 @@ const books = [
 // }
 // spellWord('JavaScript');
 
-// 4.1
-const [mainKeyword, ...rest] = books[0].keywords;
-console.log(mainKeyword, rest);
+// // 4.1
+// const [mainKeyword, ...rest] = books[0].keywords;
+// console.log(mainKeyword, rest);
 
-// 4.2
-const { publisher: bookPublisher, ...restOfBook } = books[1];
-console.log(bookPublisher, restOfBook); //🎉🎉🎉🎉🎉
+// // 4.2
+// const { publisher: bookPublisher, ...restOfBook } = books[1];
+// console.log(bookPublisher, restOfBook); //🎉🎉🎉🎉🎉
 
-// 4.3
-const printBookAuthorsCount = function (title, ...authors) {
-  console.log(`The book ${title} has ${authors.length} authors`);
+// // 4.3
+// const printBookAuthorsCount = function (title, ...authors) {
+//   console.log(`The book ${title} has ${authors.length} authors`);
+// };
+
+// printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+// 5.1
+const hasExamplesInJava = function (obj) {
+  return obj.programmingLanguage === 'Java' || 'no data';
 };
 
-printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+console.log(hasExamplesInJava(books[3]));
+// But this won't work if there is more than one lang even if one is Java
+
+// 5.2
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent &&
+    console.log(`${books[i].title} provides online content`);
+}
