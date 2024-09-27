@@ -46,7 +46,19 @@ const restaurant = {
   },
 };
 
+// Nullish Coalescing Operator
+// Only works for null and undefined, not for 0 or ''
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 23;
+console.log(guests); // 23 because 0 is falsey
+
+// Using nullish coalescing
+const guestCorrect = restaurant.numGuests ?? 23;
+console.log(guestCorrect); // 0
+
 // SHORT CIRCUITING
+/*
 // If the first value is truthy then it will immediately return that first value
 
 // Or
@@ -81,6 +93,7 @@ if (restaurant.orderPizza) {
 restaurant.orderPizza && restaurant.orderPizza('pepperoni', 'bacon');
 // The first value is truthy so it will continue. The last value is the
 // function call so it will be called
+*/
 
 // **REST**
 /*
