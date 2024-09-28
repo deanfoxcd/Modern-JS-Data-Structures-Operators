@@ -99,8 +99,51 @@ const restaurant = {
   },
 };
 
-// ** LOOPING OBJECTS**
+// **CODING CHALLENGE #2**
+/*
+// 1
+for (const [k, v] of game.scored.entries()) {
+  console.log(`Goal number ${k + 1} scored by ${v}`);
+}
 
+// 2
+let oddsSum = 0;
+const odds = Object.values(game.odds);
+for (const odd of odds) {
+  oddsSum += odd;
+}
+const oddsAve = oddsSum / odds.length;
+console.log(oddsAve);
+
+// 3
+const gameOdds = Object.entries(game.odds);
+
+for (const [k, v] of gameOdds) {
+  k === 'x'
+    ? console.log(`Odds of a draw: ${v}`)
+    : console.log(`Odds of victory for ${game[k]}: ${v}`);
+}
+
+// 4
+const scorers = {};
+
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
+
+// My attempt
+// let goalsScored = 0;
+
+// for (let [k, v] of game.scored.entries()) {
+//   k = v;
+//   v = goalsScored + 1;
+//   console.log(k, v);
+// }
+*/
+
+// ** LOOPING OBJECTS**
+/*
 // Property Names
 const properties = Object.keys(openingHours);
 
@@ -120,6 +163,7 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+  */
 
 // **OPTIONAL CHAINING**
 /*
