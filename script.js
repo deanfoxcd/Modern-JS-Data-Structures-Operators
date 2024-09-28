@@ -99,6 +99,37 @@ const restaurant = {
   },
 };
 
+// **OPTIONAL CHAINING**
+
+// Without
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+// console.log(restaurant.openingHours.mon.open); // Error. Can't read undefined.open
+
+// With
+console.log(restaurant.openingHours?.mon?.open); // Undefined instead of error
+
+const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`The restaurant opens at ${open} on ${day}`);
+}
+
+// On methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+
+// On arrays
+const users = [
+  {
+    name: 'Dean',
+    email: 'dean@hello.com',
+  },
+];
+
+console.log(users[0]?.name ?? 'User does not exist');
+
 // **FOR/OF LOOP**
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
