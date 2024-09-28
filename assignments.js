@@ -406,9 +406,38 @@ const books = [
 // };
 // console.log(newBook2);
 
-// 10.1
-const getFirstKeyword = function (book) {
-  console.log(book.keywords?.[0] ?? 'No keywords');
-};
+// // 10.1
+// const getFirstKeyword = function (book) {
+//   console.log(book.keywords?.[0] ?? 'No keywords');
+// };
 
-getFirstKeyword(books[0]);
+// getFirstKeyword(books[0]);
+
+// 11.1
+const entries = [];
+
+for (const prop of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([prop]);
+}
+console.log(entries);
+
+// 11.2
+// This one doesn't make sense!!!
+// console.log(Object.values(books[0].thirdParty.goodreads));
+
+for (const [k, v] of Object.values(books[0].thirdParty.goodreads).entries()) {
+  entries[k].push(v);
+  //   console.log(i);
+}
+console.log(entries);
+
+// const x = [1, 2, 3, 4];
+// for (const y of x.entries()) {
+//   console.log(y);
+// }
+
+// 11.3
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+console.log(entries2);
+
+// 11.4

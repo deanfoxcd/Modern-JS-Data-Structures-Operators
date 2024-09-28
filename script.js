@@ -99,8 +99,30 @@ const restaurant = {
   },
 };
 
-// **OPTIONAL CHAINING**
+// ** LOOPING OBJECTS**
 
+// Property Names
+const properties = Object.keys(openingHours);
+
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property Values
+const propValues = Object.values(openingHours);
+
+// Entire Object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+// **OPTIONAL CHAINING**
+/*
 // Without
 if (restaurant.openingHours && restaurant.openingHours.mon) {
   console.log(restaurant.openingHours.mon.open);
@@ -129,6 +151,7 @@ const users = [
 ];
 
 console.log(users[0]?.name ?? 'User does not exist');
+*/
 
 // **FOR/OF LOOP**
 /*
