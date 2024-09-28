@@ -99,6 +99,54 @@ const restaurant = {
   },
 };
 
+// **SETS**
+/*
+// Groups unique values passed into it/eliminates duplicates
+
+const ordersSet = new Set([
+  'pizza',
+  'pasta',
+  'risotto',
+  'pizza',
+  'pasta',
+  'pasta',
+]);
+
+console.log(ordersSet); // Set(3) {'pizza','pasta','risotto'}
+console.log(new Set('Dean')); // Set(4) {'D','e','a','n'}
+console.log(ordersSet.size); // 3
+console.log(ordersSet.add('bread'));
+console.log(ordersSet.has('pizza')); // true
+console.log(ordersSet.has('coke')); // false
+ordersSet.delete('bread');
+console.log(ordersSet);
+// Sets don't have indexes but are iterable
+
+for (const set of ordersSet) {
+  console.log(set);
+}
+
+// Example
+const staff = [
+  'waiter',
+  'chef',
+  'waiter',
+  'chef',
+  'cleaner',
+  'manager',
+  'cleaner',
+];
+
+const staffUnique = new Set(staff);
+// const staffUnique = [...new Set(staff)]; // To make an array from a set in one line
+console.log(staffUnique);
+
+const staffArr = [...staffUnique];
+console.log(staffArr);
+
+console.log(new Set('Dean').size); // 4
+*/
+
 // **CODING CHALLENGE #2**
 /*
 // 1

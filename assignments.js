@@ -421,23 +421,50 @@ for (const prop of Object.keys(books[0].thirdParty.goodreads)) {
 }
 console.log(entries);
 
-// 11.2
-// This one doesn't make sense!!!
-// console.log(Object.values(books[0].thirdParty.goodreads));
+// // 11.2
+// // This one doesn't make sense!!!
+// // console.log(Object.values(books[0].thirdParty.goodreads));
 
-for (const [k, v] of Object.values(books[0].thirdParty.goodreads).entries()) {
-  entries[k].push(v);
-  //   console.log(i);
-}
-console.log(entries);
-
-// const x = [1, 2, 3, 4];
-// for (const y of x.entries()) {
-//   console.log(y);
+// for (const [k, v] of Object.values(books[0].thirdParty.goodreads).entries()) {
+//   entries[k].push(v);
+//   //   console.log(i);
 // }
+// console.log(entries);
 
-// 11.3
-const entries2 = Object.entries(books[0].thirdParty.goodreads);
-console.log(entries2);
+// // const x = [1, 2, 3, 4];
+// // for (const y of x.entries()) {
+// //   console.log(y);
+// // }
 
-// 11.4
+// // 11.3
+// const entries2 = Object.entries(books[0].thirdParty.goodreads);
+// console.log(entries2);
+
+// 12.1
+const allKeywords = [];
+
+for (book of books) {
+  allKeywords.push(...book.keywords);
+}
+console.log(allKeywords);
+
+// 12.2
+const uniqueKeywords = new Set(allKeywords);
+console.log(uniqueKeywords);
+
+//12.3
+uniqueKeywords.add('coding language');
+uniqueKeywords.add('science');
+console.log(uniqueKeywords);
+
+// 12.4
+uniqueKeywords.delete('business');
+console.log(uniqueKeywords);
+
+// 12.5
+uniqueKeywordsArr = [...uniqueKeywords];
+console.log(uniqueKeywordsArr);
+
+// 12.6
+uniqueKeywords.clear();
+console.log(uniqueKeywords);
