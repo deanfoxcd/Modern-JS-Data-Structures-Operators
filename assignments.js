@@ -599,3 +599,46 @@ const books = [
 // logBookTheme('computer all operatgng system algorithms and structures book');
 
 // 17.1
+const bookCategories =
+  'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+
+const logBookCategories = function (str) {
+  strArr = str.split(';');
+  for (word of strArr) {
+    console.log(word);
+  }
+};
+
+logBookCategories(bookCategories);
+
+// 17.2
+const getKeywordsAsString = function (arr) {
+  // collect keywords
+  const keywordsArr = [];
+  for (book of arr) {
+    keywordsArr.push(...book.keywords);
+  }
+  // remove duplicates
+  const keywordsUnique = new Set([...keywordsArr]);
+  console.log(keywordsArr);
+  console.log(keywordsUnique);
+  //join to one string
+  console.log([...keywordsUnique].join(';'));
+};
+// getKeywordsAsString(books);
+
+// 17.3
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
+
+const logBookChapters = function (chapters) {
+  for (const [chapter, pages] of chapters) {
+    console.log(chapter.padEnd(30, '_'), pages);
+  }
+};
+logBookChapters(bookChapters);
