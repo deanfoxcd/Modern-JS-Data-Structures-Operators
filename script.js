@@ -113,6 +113,48 @@ const restaurant = {
   },
 };
 
+// **STRING METHODS PRACTICE**
+/*
+
+// console.log(flights.split('+'));
+
+// My Solution (could be cleaned up especially around the duplicate messages)
+// for (const flight of flights.split('+')) {
+//   const [status, airportFrom, airportTo, time] = flight.split(';');
+//   const statusClean = status.replaceAll('_', ' ').trim();
+//   const airportFromClean = airportFrom.toUpperCase().slice(0, 3);
+//   const airportToClean = airportTo.toUpperCase().slice(0, 3);
+//   const timeClean = time.replace(':', 'h');
+//   if (statusClean.startsWith('Delayed')) {
+//     const message =
+//       `🔴 ${statusClean} from ${airportFromClean} to ${airportToClean} (${timeClean})`.padStart(
+//         50,
+//         ' '
+//       );
+//     console.log(message);
+//   } else {
+//     const message =
+//       `${statusClean} from ${airportFromClean} to ${airportToClean} (${timeClean})`.padStart(
+//         50,
+//         ' '
+//       );
+//     console.log(message);
+//   }
+// }
+
+// Course Solution
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);
+  console.log(output);
+}
+  */
+
 // **CODING CHALLENGE # 4**
 /*
 
