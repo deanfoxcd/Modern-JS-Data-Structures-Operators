@@ -113,6 +113,108 @@ const restaurant = {
   },
 };
 
+// **CODING CHALLENGE # 4**
+/*
+
+// My Solution (worked fine)
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const lines = text.split('\n');
+  // for (const line of lines) {
+  //   const [firstWord, lastWord] = line.split('_');
+  //   console.log(firstWord + (lastWord[0].toUpperCase() + lastWord.slice(1)));
+  // }
+  for (let i = 0; i < lines.length; i++) {
+    const [firstWord, lastWord] = lines[i].toLowerCase().trim().split('_');
+    const finalWord =
+      firstWord + (lastWord[0].toUpperCase() + lastWord.slice(1));
+    console.log(finalWord.padEnd(20, ' ') + '✅'.repeat(i + 1));
+  }
+});
+
+// Course Solution
+// document.querySelector('button').addEventListener('click', function () {
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_');
+
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+// });
+
+// TEST DATA
+// hi_dean
+// hello_belle
+*/
+
+// **STRINGS - PART 3**
+/*
+
+// Split and Join
+console.log('a+very+nice+day'.split('+'));
+console.log('Dean Fox'.split(' '));
+
+const [firstName, lastName] = 'Dean Fox'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  console.log(names);
+  let finalName = ''; // My solution
+  const namesUpper = []; // Course solution
+
+  for (const word of names) {
+    // My solution.
+    const newWord = word[0].toUpperCase() + word.slice(1);
+    finalName = finalName + ' ' + newWord;
+
+    // Course solution
+    namesUpper.push(word[0].toUpperCase() + word.slice(1));
+    // or
+    // namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+
+  console.log(finalName.trim()); // My solution. Trim because it added a space onto the beginning (line 136)
+  console.log(namesUpper.join(' ')); // Course solution
+};
+capitalizeName('jessica anne smith davis');
+
+// Padding a string
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+')); // Makes string 25 long and pads start with '+'
+console.log('Dean'.padStart(25, '+').padEnd(30, '+'));
+
+// Example
+const maskCard = function (num) {
+  const str = num + ''; // Shortcut for converting number to string
+  const nummasked = str.slice(-4).padStart(str.length, '*');
+  return nummasked;
+};
+
+console.log(maskCard(6712947190453289));
+console.log(maskCard('6387890123016428834290473890'));
+
+// Repeat
+const message2 = 'Bad weather. All flights delayed. ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (num) {
+  console.log(`There are ${num} planes in line ${'🛫'.repeat(num)}`);
+};
+planesInLine(5);
+*/
+
 // **STRINGS - PART 2**
 /*
 
