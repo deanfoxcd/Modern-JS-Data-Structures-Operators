@@ -42,6 +42,20 @@ const game = {
   },
 };
 
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -98,6 +112,53 @@ const restaurant = {
     console.log(otherIng);
   },
 };
+
+// **CODING CHALLENGE #2**
+/*
+
+// 1.
+// My stupid long way
+// let events = [];
+// for (const [k, v] of gameEvents) {
+//   events.push(v);
+// }
+// events = [...new Set(events)];
+// console.log(events);
+
+// The correct way
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+// 2.
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// 3.
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} mins`
+);
+// Bonus course answer for extra time
+const time = [...gameEvents.keys()].pop(); // Takes last element (92)
+console.log(time);
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
+// 4.
+// My solution
+for (const [k, v] of gameEvents) {
+  if (k <= 45) {
+    console.log(`[FIRST HALF] ${k}${v}`);
+  } else {
+    console.log(`[SECOND HALF] ${k}${v}`);
+  }
+}
+// Course Solution
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[${half} HALF] ${min}: ${event}`);
+// }
+*/
 
 // **MAPS: ITERATION**
 /*
