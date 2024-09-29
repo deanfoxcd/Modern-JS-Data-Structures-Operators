@@ -489,11 +489,42 @@ const books = [
 // // 13.5
 // if (bookMap.has('author')) console.log('The author is known');
 
-// 14.1
-const firstBookMap = new Map(Object.entries(books[0]));
-console.log(firstBookMap);
+// // 14.1
+// const firstBookMap = new Map(Object.entries(books[0]));
+// console.log(firstBookMap);
 
-// 14.2
-for (const [k, v] of firstBookMap) {
-  if (typeof v === 'number') console.log(k);
+// // 14.2
+// for (const [k, v] of firstBookMap) {
+//   if (typeof v === 'number') console.log(k);
+// }
+
+// 15.1
+console.log(
+  books[0].ISBN[6],
+  books[0].ISBN[4],
+  books[0].ISBN[9],
+  books[0].ISBN[8]
+);
+
+// 15.2
+const quote =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote.indexOf('chess'));
+
+// 15.3
+// My solution
+console.log(quote.slice(-'boxing'.length));
+// Course solution
+console.log(quote.slice(quote.lastIndexOf(' ') + 1));
+
+// 15.4
+// My solution
+// const isContributor = function (str) {
+//   console.log(str.slice(str.lastIndexOf(' ') + 1) === '(Contributor)');
+// };
+// Course Solution
+function isContributor(author) {
+  return author.lastIndexOf('(Contributor)') !== -1;
 }
+isContributor('Julie Sussman (Contributor)');
+isContributor('Robert Sedgewick');

@@ -113,7 +113,37 @@ const restaurant = {
   },
 };
 
-// **CODING CHALLENGE #2**
+// **STRINGS - PART 1**
+/*
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.lastIndexOf('Portugal'));
+
+console.log(airline.slice(4)); // Cuts at position 4
+console.log(airline.slice(4, 7)); // Cuts at position 4 and stops before 7
+
+console.log(airline.slice(0, airline.indexOf(' '))); // First word
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Last word
+
+console.log(airline.slice(-3)); // Prints last 3 letters
+console.log(airline.slice(1, -3)); // Cuts off first letter and last 3
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log(`${seat} is a middle seat`);
+  else console.log(`${seat} is not a middle seat`);
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+*/
+
+// **CODING CHALLENGE #3**
 /*
 
 // 1.
