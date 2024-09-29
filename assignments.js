@@ -469,22 +469,31 @@ const books = [
 // uniqueKeywords.clear();
 // console.log(uniqueKeywords);
 
-// 13.1
-const bookMap = new Map();
-bookMap.set('title', 'Clean Code').set('author', 'Robert C. Martin');
-console.log(bookMap);
-// Course solution
-// const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']]);
+// // 13.1
+// const bookMap = new Map();
+// bookMap.set('title', 'Clean Code').set('author', 'Robert C. Martin');
+// console.log(bookMap);
+// // Course solution
+// // const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']]);
 
-// 13.2
-bookMap.set('pages', 464);
-console.log(bookMap);
+// // 13.2
+// bookMap.set('pages', 464);
+// console.log(bookMap);
 
-// 13.3
-console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
+// // 13.3
+// console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
 
-// 13.4
-console.log(bookMap.size);
+// // 13.4
+// console.log(bookMap.size);
 
-// 13.5
-if (bookMap.has('author')) console.log('The author is known');
+// // 13.5
+// if (bookMap.has('author')) console.log('The author is known');
+
+// 14.1
+const firstBookMap = new Map(Object.entries(books[0]));
+console.log(firstBookMap);
+
+// 14.2
+for (const [k, v] of firstBookMap) {
+  if (typeof v === 'number') console.log(k);
+}

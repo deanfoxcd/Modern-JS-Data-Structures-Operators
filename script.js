@@ -99,7 +99,42 @@ const restaurant = {
   },
 };
 
-// **MAPS**
+// **MAPS: ITERATION**
+/*
+
+const question = new Map([
+  ['question', 'Best language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Wrong!'],
+]);
+console.log(question);
+
+// Convert Object to Map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz App
+console.log(question.get('question'));
+for (const [k, v] of question) {
+  if (typeof k === 'number') console.log(`Answer ${k}: ${v}`);
+}
+// const answer = Number(prompt('You answer?'));
+const answer = 3;
+
+console.log(question.get(answer === question.get('correct')));
+
+// Convert Map to Array
+console.log([...question]);
+// console.log([...question.entries()]); // Same as above
+console.log([...question.keys()]);
+console.log([...question.values()]);
+*/
+
+// **MAPS FUNDAMENTALS**
 /*
 const rest = new Map();
 rest.set('name', "Nicoletta's");
