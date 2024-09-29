@@ -413,13 +413,13 @@ const books = [
 
 // getFirstKeyword(books[0]);
 
-// 11.1
-const entries = [];
+// // 11.1
+// const entries = [];
 
-for (const prop of Object.keys(books[0].thirdParty.goodreads)) {
-  entries.push([prop]);
-}
-console.log(entries);
+// for (const prop of Object.keys(books[0].thirdParty.goodreads)) {
+//   entries.push([prop]);
+// }
+// console.log(entries);
 
 // // 11.2
 // // This one doesn't make sense!!!
@@ -440,31 +440,51 @@ console.log(entries);
 // const entries2 = Object.entries(books[0].thirdParty.goodreads);
 // console.log(entries2);
 
-// 12.1
-const allKeywords = [];
+// // 12.1
+// const allKeywords = [];
 
-for (book of books) {
-  allKeywords.push(...book.keywords);
-}
-console.log(allKeywords);
+// for (book of books) {
+//   allKeywords.push(...book.keywords);
+// }
+// console.log(allKeywords);
 
-// 12.2
-const uniqueKeywords = new Set(allKeywords);
-console.log(uniqueKeywords);
+// // 12.2
+// const uniqueKeywords = new Set(allKeywords);
+// console.log(uniqueKeywords);
 
-//12.3
-uniqueKeywords.add('coding language');
-uniqueKeywords.add('science');
-console.log(uniqueKeywords);
+// //12.3
+// uniqueKeywords.add('coding language');
+// uniqueKeywords.add('science');
+// console.log(uniqueKeywords);
 
-// 12.4
-uniqueKeywords.delete('business');
-console.log(uniqueKeywords);
+// // 12.4
+// uniqueKeywords.delete('business');
+// console.log(uniqueKeywords);
 
-// 12.5
-uniqueKeywordsArr = [...uniqueKeywords];
-console.log(uniqueKeywordsArr);
+// // 12.5
+// uniqueKeywordsArr = [...uniqueKeywords];
+// console.log(uniqueKeywordsArr);
 
-// 12.6
-uniqueKeywords.clear();
-console.log(uniqueKeywords);
+// // 12.6
+// uniqueKeywords.clear();
+// console.log(uniqueKeywords);
+
+// 13.1
+const bookMap = new Map();
+bookMap.set('title', 'Clean Code').set('author', 'Robert C. Martin');
+console.log(bookMap);
+// Course solution
+// const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']]);
+
+// 13.2
+bookMap.set('pages', 464);
+console.log(bookMap);
+
+// 13.3
+console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
+
+// 13.4
+console.log(bookMap.size);
+
+// 13.5
+if (bookMap.has('author')) console.log('The author is known');
