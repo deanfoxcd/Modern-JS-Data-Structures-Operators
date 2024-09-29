@@ -113,6 +113,74 @@ const restaurant = {
   },
 };
 
+// **STRINGS - PART 2**
+/*
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization of a name
+const passenger = 'deAN';
+const passengerLow = passenger.toLowerCase();
+const passengerCorrect = passengerLow[0].toUpperCase() + passengerLow.slice(1);
+console.log(passengerCorrect);
+
+// As a function
+const cap = function (name) {
+  const nameLow = name.toLowerCase();
+  return nameLow[0].toUpperCase() + nameLow.slice(1);
+};
+console.log(cap('isAbElLE'));
+
+// Comparing email
+const email = 'deanfoxcd@gmail.com';
+const loginEmail = '  DeanFoxcD@gmail.Com  \n';
+
+const compareEmail = function (eStored, eInput) {
+  const eTrim = eInput.trim().toLowerCase();
+  console.log(eTrim);
+  if (eTrim === eStored) console.log('Emails match');
+};
+
+compareEmail(email, loginEmail);
+
+// Replacing parts of a string
+const priceGB = '288,97#';
+const priceUS = priceGB.replace(',', '.').replace('#', '$');
+console.log(priceUS);
+
+const announcement =
+  'All passengers report to boarding door 23! Boarding door 23!';
+
+// With regular expression
+console.log(announcement.replace(/door/g, 'gate'));
+// With new reaplaceAll
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320')); // True
+console.log(plane.includes('Boeing')); // False
+console.log(plane.startsWith('Air')); // True
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo'))
+  console.log(`${plane} is part of the new fleet`);
+
+// Practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('gun') || baggage.includes('knife'))
+    console.log('You are not allowed on the plane');
+  else console.log('Welcome aboard');
+};
+
+checkBaggage('I have a laptop, some Food, and a pocket Knife');
+checkBaggage('Socks and a camera');
+checkBaggage('Got some snacks and a guN for protection');
+*/
+
 // **STRINGS - PART 1**
 /*
 

@@ -498,33 +498,104 @@ const books = [
 //   if (typeof v === 'number') console.log(k);
 // }
 
-// 15.1
-console.log(
-  books[0].ISBN[6],
-  books[0].ISBN[4],
-  books[0].ISBN[9],
-  books[0].ISBN[8]
-);
+// // 15.1
+// console.log(
+//   books[0].ISBN[6],
+//   books[0].ISBN[4],
+//   books[0].ISBN[9],
+//   books[0].ISBN[8]
+// );
 
-// 15.2
-const quote =
-  'A computer once beat me at chess, but it was no match for me at kick boxing';
-console.log(quote.indexOf('chess'));
+// // 15.2
+// const quote =
+//   'A computer once beat me at chess, but it was no match for me at kick boxing';
+// console.log(quote.indexOf('chess'));
 
-// 15.3
-// My solution
-console.log(quote.slice(-'boxing'.length));
-// Course solution
-console.log(quote.slice(quote.lastIndexOf(' ') + 1));
+// // 15.3
+// // My solution
+// console.log(quote.slice(-'boxing'.length));
+// // Course solution
+// console.log(quote.slice(quote.lastIndexOf(' ') + 1));
 
-// 15.4
-// My solution
-// const isContributor = function (str) {
-//   console.log(str.slice(str.lastIndexOf(' ') + 1) === '(Contributor)');
+// // 15.4
+// // My solution
+// // const isContributor = function (str) {
+// //   console.log(str.slice(str.lastIndexOf(' ') + 1) === '(Contributor)');
+// // };
+// // Course Solution
+// function isContributor(author) {
+//   return author.lastIndexOf('(Contributor)') !== -1;
+// }
+// isContributor('Julie Sussman (Contributor)');
+// isContributor('Robert Sedgewick');
+
+// // 16.1
+// // My Solution
+// // Mine won't work if there isn't '(contributor)' at the end 😔
+// const normalizeAuthorName = function (author) {
+//   const authorClean = author.toLowerCase().trim();
+//   let authorFirst = authorClean.slice(0, authorClean.indexOf(' '));
+//   let authorLast = authorClean
+//     .slice(authorClean.indexOf(' '), authorClean.lastIndexOf(' '))
+//     .trim();
+//   authorCap =
+//     authorFirst[0].toUpperCase() +
+//     authorFirst.slice(1) +
+//     ' ' +
+//     authorLast[0].toUpperCase() +
+//     authorLast.slice(1);
+//   console.log(authorCap);
+//   //   console.log(authorFirst);
+//   //   console.log(authorLast);
+//   //   if (authorClean.endsWith('(contributor)')) {
+//   //     const authorTrim = authorClean.slice(0, authorClean.lastIndexOf(' '));
+//   //     console.log(authorTrim);
+//   //     // authorClean.slice(0, -)
+//   //   } else console.log(authorClean);
 // };
-// Course Solution
-function isContributor(author) {
-  return author.lastIndexOf('(Contributor)') !== -1;
-}
-isContributor('Julie Sussman (Contributor)');
-isContributor('Robert Sedgewick');
+
+// // Course Solution
+// // function normalizeAuthorName(author) {
+// //     author = author.trim();
+// //     const firstName = author.slice(0, author.indexOf(' '));
+
+// //     let lastName = '';
+// //     if (author.indexOf(' ') === author.lastIndexOf(' ')) {
+// //       lastName = author.slice(author.indexOf(' ') + 1, author.length);
+// //     } else {
+// //       lastName = author.slice(author.indexOf(' ') + 1, author.lastIndexOf(' '));
+// //     }
+
+// //     const capitalizedFirstName = firstName[0].toUpperCase() + firstName.slice(1).toLowerCase();
+// //     const capitalizedLastName = lastName[0].toUpperCase() + lastName.slice(1).toLowerCase();
+
+// //     return capitalizedFirstName + ' ' + capitalizedLastName;
+// //   }
+
+// normalizeAuthorName('  JuliE sussMan (Contributor)');
+
+// // 16.2
+// const newBookTitle = books[1].title.replace('Programs', 'Software');
+// console.log(newBookTitle);
+
+// // 16.3
+// const logBookTheme = function (title) {
+//   const titleLower = title.toLowerCase();
+//   if (titleLower.startsWith('computer'))
+//     console.log('This book is about computers');
+//   else if (
+//     titleLower.includes('algorithms') &&
+//     titleLower.includes('structures')
+//   )
+//     console.log('This book is about algorithms and data structures');
+//   else if (!titleLower.includes('operating')) {
+//     if (titleLower.endsWith('system') || titleLower.endsWith('systems'))
+//       console.log(
+//         'This book is about some systems, but definitely not about operating systems'
+//       );
+//   }
+// };
+
+// logBookTheme('computer all operatgng system algorithms and structures book');
+
+// 17.1
